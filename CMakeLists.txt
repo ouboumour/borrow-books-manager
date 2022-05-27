@@ -4,3 +4,4 @@ project(reservation_de_livres C)
 set(CMAKE_C_STANDARD 99)
 
     add_executable(reservation_de_livres main.c)
+    TARGET_LINK_LIBRARIES(reservation_de_livres json-c)

@@ -1,0 +1,14 @@
+[
+  {
+    "bookId": 1,
+    "bookTitle": "Rich dad poor dad",
+    "bookAuthor": "Robert Kiyosaki",
+    "borrowerId": 1
+  },
+  {
+    "bookId": 2,
+    "bookTitle": "The Secret",
+    "bookAuthor": "Rhonda Byrne",
+    "borrowerId": null
+  }
+]
