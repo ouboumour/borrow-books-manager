@@ -3,7 +3,7 @@
 // the above approach
 #include <stdio.h>
 #include <stdlib.h>
-#include<json-c/json.h>
+#include <json-c/json.h>
 #include <string.h>
 #define CMAX 30
 
@@ -289,7 +289,7 @@ void manageStudentsMenuActions(unsigned int subChoice, int* returnBackToMainMenu
     }
 }
 
-void manageBooksMenuActions(unsigned int subChoice, short* returnBackToMainMenu) {
+void manageBooksMenuActions(unsigned int subChoice, unsigned int* returnBackToMainMenu) {
     char bookTitle[CMAX];
     char bookAuthor[CMAX];
     int bookId;
@@ -357,10 +357,9 @@ void displayBooksMenu() {
     printf("***************** Fin Menu gestion des livres *****************\n\n");
 }
 
-void manageStudentsManagementMenuActions(unsigned int subChoice, short* returnBackToMainMenu) {
+void manageStudentsManagementMenuActions(unsigned int subChoice, unsigned int* returnBackToMainMenu) {
     int bookId;
     int studentId;
-    Student* student;
     switch (subChoice) {
         case 1:
             // Emprunter un livre
@@ -421,7 +420,7 @@ void displayStudentsManagementMenu() {
     printf("***************** Fin Menu gestion des emprunts *****************\n\n");
 }
 void loadStudentData() {
-    json_object *root = json_object_from_file("students.json");
+    json_object *root = json_object_from_file("data/students.json");
     int n = json_object_array_length(root);
     for (int i=0;i<n; i++)
     {
@@ -443,7 +442,7 @@ void loadStudentData() {
 }
 
 void loadBookData() {
-    json_object *root = json_object_from_file("books.json");
+    json_object *root = json_object_from_file("data/books.json");
     int n = json_object_array_length(root);
     for (int i=0;i<n; i++)
     {
@@ -468,7 +467,7 @@ void loadBookData() {
 }
 
 void loadIdsManagers() {
-    json_object *root = json_object_from_file("ids_manager.json");
+    json_object *root = json_object_from_file("data/ids_manager.json");
 
     json_object* lastStudentAssignedIdJson = json_object_object_get(root, "lastStudentAssignedId");
     json_object* lastBookAssignedIdJson = json_object_object_get(root, "lastBookAssignedId");
