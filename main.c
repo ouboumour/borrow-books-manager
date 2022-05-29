@@ -3,7 +3,7 @@
 // the above approach
 #include <stdio.h>
 #include <stdlib.h>
-#include "data/json-c/json.h"
+#include "json-c/json.h"
 #include <string.h>
 #define CMAX 30
 
