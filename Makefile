@@ -1,6 +1,8 @@
-run: json-lib
+# build/run the program
+run:
 	@gcc main.c -ljson-c -o executable;
 	@./executable
 
-json-lib:
-	@sudo apt install libjson-c-dev
+# install requirements
+requirements:
+	@apt-get install -y libjson-c-dev gcc
